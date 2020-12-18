@@ -3,4 +3,4 @@ steps:
 - uses: nanasess/setup-php@master
   with:
     php-version: '5.6'
-- run: php my_script.php
+- run: php index.php
