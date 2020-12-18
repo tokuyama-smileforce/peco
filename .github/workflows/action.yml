@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-18.04
 
   steps:
-  - uses: actions/checkout@master
-  - uses: nanasess/setup-php@master
+  - uses: actions/peco@main
+  - uses: peco@main
     with:
       php-version: '5.6'
   - run: php index.php
