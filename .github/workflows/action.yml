@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-18.04
   steps:
   - uses: actions/peco@main
-  - uses: ./peco@main
     with:
       php-version: '5.6'
   - run: php index.php
