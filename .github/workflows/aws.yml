@@ -44,8 +44,8 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
+    - uses: actions/checkout@main
     - name: Deploy
-      uses: actions/checkout@main
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         USER_NAME: ${{ secrets.USER_NAME }}
