@@ -25,9 +25,10 @@
 
 on:
   #workflow_dispatch
-  push:
+  pull_request:
     branches:
-      - '*'
+      - 'main'
+    types: [closed]
 
 name: Deploy to Amazon EC2
 
@@ -46,6 +47,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-18.04
+    if: github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@main
     - name: Deploy
