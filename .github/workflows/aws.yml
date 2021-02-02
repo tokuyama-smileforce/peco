@@ -24,7 +24,10 @@
 #    and best practices on handling the access key credentials.
 
 on:
-  workflow_dispatch
+  #workflow_dispatch
+  push:
+    branches:
+      - '*'
 
 name: Deploy to Amazon EC2
 
