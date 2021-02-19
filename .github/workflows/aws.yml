@@ -60,9 +60,9 @@ jobs:
         HOST_NAME: ${{ secrets.HOST_NAME }}
       run:  |
         # 秘密鍵にファイル名secret_keyをつける
-        echo "$PRIVATE_KEY" > private_key
+        echo "$PRIVATE_KEY" >  private_key
         # パーミッションの変更
         #chmod 600 private_key
         icacls private_key /grant Administrator:RW
         # ssh接続 > デプロイするディレクトリへ移動 > デプロイ
-        ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} "cd /home/ec2-user/var/www/peco && git pull origin main"
+        ssh -i private_key ${USER_NAME}@${HOST_NAME} "cd /home/ec2-user/var/www/peco && git pull origin main"
