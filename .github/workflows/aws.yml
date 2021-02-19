@@ -65,4 +65,5 @@ jobs:
         #chmod 600 private_key
         icacls private_key /grant Administrator:RW
         # ssh接続 > デプロイするディレクトリへ移動 > デプロイ
-        ssh -i private_key ${USER_NAME}@${HOST_NAME} "cd /home/ec2-user/var/www/peco && git pull origin main"
+        #ssh -i private_key ${USER_NAME}@${HOST_NAME} "cd /home/ec2-user/var/www/peco && git pull origin main"
+        ssh -i private_key $env:USER_NAME + '@' + $env:HOST_NAME "cd /home/ec2-user/var/www/peco && git pull origin main"
