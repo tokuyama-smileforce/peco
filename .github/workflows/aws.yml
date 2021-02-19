@@ -25,6 +25,9 @@
 
 on:
   #workflow_dispatch
+  #push:
+  #  branches:
+  #    - '*'
   pull_request:
     branches:
       - 'main'
@@ -46,7 +49,7 @@ jobs:
       - run: php index.php
 
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: [self-hosted, Windows, X64, Windows-on-aws]
     if: github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@main
