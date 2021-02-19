@@ -50,7 +50,7 @@ jobs:
 
   deploy:
     runs-on: [self-hosted, Windows, X64, Windows-on-aws]
-    if: github.event.pull_request.merged == true
+    #if: github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@main
     - name: Deploy
