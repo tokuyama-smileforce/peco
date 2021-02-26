@@ -1,0 +1,30 @@
+on:
+  workflow_dispatch
+  #push:
+  #  branches:
+  #    - '*'
+  #pull_request:
+  #  branches:
+  #    - 'main'
+  #  types: [closed]
+
+name: Metric analyses on EC2
+
+jobs:
+  metrics:
+    runs-on: [self-hosted, Windows, X64, Windows-on-aws]
+    steps:
+    - name: Metrics
+      uses: actions/checkout@main
+      run:  |
+        # undコマンドに入る
+        & 'C:\ProgramFiles\SciTools\bin\pc-win64\und.exe'
+        # メトリクスを出力する
+        metrics -db c:\understand\work\peco.udb
+        # undコマンドを終了する
+        exit
+    - name: Archive metrics results
+      uses: actions/upload-artifact@v2
+      with:
+        name: metrics-report
+        path: "C:\understand\work\peco.csv"
