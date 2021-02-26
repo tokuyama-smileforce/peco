@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: Metrics
       uses: actions/checkout@main
-      run:  |
+    - run:  |
         # undコマンドに入る
         & 'C:\ProgramFiles\SciTools\bin\pc-win64\und.exe'
         # メトリクスを出力する
