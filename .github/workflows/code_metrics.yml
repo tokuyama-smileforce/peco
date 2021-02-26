@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@main
     - run:  |
         # undコマンドに入る
-        & 'C:\ProgramFiles\SciTools\bin\pc-win64\und.exe'
+        & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
         # メトリクスを出力する
         metrics -db c:\understand\work\peco.udb
         # undコマンドを終了する
