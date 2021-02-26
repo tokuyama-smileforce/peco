@@ -27,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: metrics-report
-        path: "C:\understand\work\peco.csv"
+        path: C:\understand\work\peco.csv
