@@ -14,15 +14,15 @@ jobs:
   metrics:
     runs-on: [self-hosted, Windows, X64, Windows-on-aws]
     steps:
-    - name: Metrics
-      uses: actions/checkout@main
-    - run:  |
-        # undコマンドに入る
-        & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
-        # メトリクスを出力する
-        metrics -db c:\understand\work\peco.udb
-        # undコマンドを終了する
-        exit
+    #- name: Metrics
+    #  uses: actions/checkout@main
+    #- run:  |
+    #    # undコマンドに入る
+    #    & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
+    #    # メトリクスを出力する
+    #    metrics -db c:\understand\work\peco.udb
+    #    # undコマンドを終了する
+    #    exit
     - name: Archive metrics results
       uses: actions/upload-artifact@v2
       with:
