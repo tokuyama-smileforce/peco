@@ -23,6 +23,11 @@ jobs:
     #    metrics -db c:\understand\work\peco.udb
     #    # undコマンドを終了する
     #    exit
+    - name: Metrics
+      run:  |
+        # understandバッチを実行する
+        C:\understand\workK\batch\AnalyzeSimple.bat
+
     - name: Archive metrics results
       uses: actions/upload-artifact@v2
       with:
