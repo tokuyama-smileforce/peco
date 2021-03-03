@@ -25,6 +25,8 @@ jobs:
       #  exit
     - name: Metrics
       run:  |
+        # pathを出力
+        echo %path:;=&echo.%
         # understandバッチを実行する
         C:\understand\workK\batch\AnalyzeSimple.bat
 
