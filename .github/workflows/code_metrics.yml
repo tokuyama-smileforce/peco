@@ -26,7 +26,7 @@ jobs:
     - name: Metrics
       run:  |
         # pathを出力
-        echo %path:;=&echo.%
+        $ENV:Path.Split(";")
         # understandバッチを実行する
         C:\understand\workK\batch\AnalyzeSimple.bat
 
