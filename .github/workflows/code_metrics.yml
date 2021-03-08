@@ -14,7 +14,7 @@ jobs:
   metrics:
     runs-on: [self-hosted, Windows, X64, Windows-on-aws]
     steps:
-    - name: Metrics
+    - name: Set License
       uses: actions/checkout@main
     - env:
         UNDERSTAND_LICENSE: ${{ secrets.UNDERSTAND_LICENSE }}
@@ -29,9 +29,9 @@ jobs:
         und
         # & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
         # メトリクスを出力する
-        metrics -db c:\understand\work\peco.udb
+        #metrics -db c:\understand\work\peco.udb
         # undコマンドを終了する
-        exit
+        quit
     #- name: Metrics
     #  run:  |
     #    # pathを出力
