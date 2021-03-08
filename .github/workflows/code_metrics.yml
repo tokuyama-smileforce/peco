@@ -26,18 +26,16 @@ jobs:
         # ライセンス認証
         und -setlicensecode "$env:UNDERSTAND_LICENSE"
         # undコマンドに入る
-        und
+        #und
         # & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
         # メトリクスを出力する
         #metrics -db c:\understand\work\peco.udb
         # undコマンドを終了する
-        quit
-    #- name: Metrics
-    #  run:  |
-    #    # pathを出力
-    #    $ENV:Path.Split(";")
-    #    # understandバッチを実行する
-    #    C:\understand\workK\batch\AnalyzeSimple.bat
+        #quit
+    - name: Metrics
+      run:  |
+        # understandバッチを実行する
+        C:\understand\workK\batch\AnalyzeSimple.bat
 
     - name: Archive metrics results
       uses: actions/upload-artifact@v2
