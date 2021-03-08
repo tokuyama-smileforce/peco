@@ -22,6 +22,7 @@ jobs:
         #Pathを追加
         $ENV:Path+=";C:\Program Files\SciTools\bin\pc-win64\;"
         $ENV:Path.Split(";")
+        Get-Command und
         # ライセンス認証
         #und -setlicensecode "$env:UNDERSTAND_LICENSE"
         # undコマンドに入る
