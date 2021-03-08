@@ -21,15 +21,16 @@ jobs:
       run:  |
         #Pathを追加
         $ENV:Path+="C:\Program Files\SciTools\bin\pc-win64\;"
-        # ライセンス認証
-        und -setlicensecode "$env:UNDERSTAND_LICENSE"
-        # undコマンドに入る
-        und
-        # & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
-        # メトリクスを出力する
-        metrics -db c:\understand\work\peco.udb
-        # undコマンドを終了する
-        exit
+        $ENV:Path.Split(";")
+    #    # ライセンス認証
+    #    und -setlicensecode "$env:UNDERSTAND_LICENSE"
+    #    # undコマンドに入る
+    #    und
+    #    # & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
+    #    # メトリクスを出力する
+    #    metrics -db c:\understand\work\peco.udb
+    #    # undコマンドを終了する
+    #    exit
     #- name: Metrics
     #  run:  |
     #    # pathを出力
