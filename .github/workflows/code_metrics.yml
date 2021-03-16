@@ -16,22 +16,24 @@ jobs:
     steps:
     - name: Set License
       uses: actions/checkout@main
+    - name:
     - env:
         UNDERSTAND_LICENSE: ${{ secrets.UNDERSTAND_LICENSE }}
       run:  |
-        #Pathを追加
+        # Pathを追加
         $ENV:Path+=";C:\Program Files\SciTools\bin\pc-win64\;"
+        # Pathの確認
         $ENV:Path.Split(";")
+        # undコマンドが通ってることを確認
         Get-Command und
+        # レポート出力先フォルダ内を確認
+        Get-ChildItem C:\understand\workK\udbSimple\
+        # レポート出力先フォルダ内のファイルを削除
+        Get-ChildItem C:\understand\workK\udbSimple\ -Include *.* -Recurse | del
+        # レポート出力先フォルダ内を確認
+        Get-ChildItem C:\understand\workK\udbSimple\
         # ライセンス認証
         und -setlicensecode "$env:UNDERSTAND_LICENSE"
-        # undコマンドに入る
-        #und
-        # & 'C:\Program Files\SciTools\bin\pc-win64\und.exe'
-        # メトリクスを出力する
-        #metrics -db c:\understand\work\peco.udb
-        # undコマンドを終了する
-        #quit
     - name: Metrics
       run:  |
         # understandバッチを実行する
