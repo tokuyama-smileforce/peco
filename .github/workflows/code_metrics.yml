@@ -16,7 +16,6 @@ jobs:
     steps:
     - name: Set License
       uses: actions/checkout@main
-    - name:
     - env:
         UNDERSTAND_LICENSE: ${{ secrets.UNDERSTAND_LICENSE }}
       run:  |
